@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Practice</title>
+    <script>
+        function str(){
+             let name = "Tejasvi";
+            let last = new String("Rana");
+            document.write(name.toUpperCase() + " " + last.toUpperCase() + "<br>");
+            document.write(name.toLowerCase() + " " + last.toLowerCase() + "<br>");
+            document.write("At index 2 : " + name.charAt(2) + "<br>");
+            document.write("Index of p : " + name.indexOf("p") + "<br>");
+            document.write("Last index of name : " + name.lastIndexOf("a") + "<br>");
+            document.write("Slice : " + name.slice(1, 3) + "<br>");
+            document.write("Split : " + name.split("") + "<br>");
+            document.write("Includes Rana : " + name.includes("Rana") + "<br>");
+            document.write("Replace : " + last.replace("Rana", "Mahi") + "<br>");
+            document.write("Concat : " + name.concat(" ", last) + "<br>");
+        }
+    </script>
+</head>
+<body>
+    <input type="button" onclick="str()" value="result">
+</body>
+</html>
