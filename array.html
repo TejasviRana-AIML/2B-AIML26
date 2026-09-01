@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Practice</title>
+    <script>
+           function array() {
+            let a = new Array(1, 2, 3, 5, 6);
+            document.write("Array : "+a+"<br>")
+            let data = a.pop();
+            document.write("After pop: " + a + "<br>");
+            document.write("Length: " + a.length + "<br>");
+            let c = a.push(7);
+            document.write("After push: " + a + "<br>");
+            document.write("New length: " + c + "<br>");
+            a.unshift(8);
+            document.write("After unshift: " + a + "<br>");
+            a.shift();
+            document.write("After shift: " + a + "<br>");
+            let e = a.splice(1, 2);
+            document.write("Removed using splice: " + e + "<br>");
+            document.write("Final array: " + a);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" onclick="array()" value="result">
+</body>
+</html>
