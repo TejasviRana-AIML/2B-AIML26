@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+    <script>
+        let Product={
+               ID: 1234567,
+               Name: "Mobile",
+               Price: 40,
+               Quantity: 3,
+
+              
+        };
+           
+           document.write("PRODUCT DETAILS <br>");
+
+           document.write("Product.ID: ",+ Product.ID,"<br>");
+           document .write("Product.Name: ",+ Product.Name,"<br>");
+           document.write("Product.Price: ",+ Product.Price,"<br>");
+           document.write("Product.Quantity: ",+ Product.Quantity,"<br>");
+           
+           
+              
+    function totalPrice(){
+        let total=Product.Price*Product.Quantity;
+        document.write("Total Price: ",+ total);
+    }
+
+   function updateQuantity(newQuantity){
+        Product.Quantity=newQuantity;
+        let updatedquantity=parseInt(prompt("Enter new quantity: "));
+        Product.Quantity=updatedquantity;
+        alert(Product.Quantity*Product.Price);
+    }
+
+function updatedProductDetails(){
+    
+    document.write("UPDATED PRODUCT DETAILS <br>");
+    document.write("Product.ID: ",+ Product.ID,"<br>");
+    document .write("Product.Name: ",+ Product.Name,"<br>");
+    document.write("Product.Price: ",+ Product.Price,"<br>");
+    document.write("Product.Quantity: ",+ Product.Quantity,"<br>");
+
+}
+        
+       
+    </script>
+</head>
+<body>
+    
+    <input type="button" onclick="totalPrice()" value="Total Price">
+    <input type="button" onclick="updateQuantity()" value="Update Quantity">
+    <input type="button" onclick="updatedProductDetails()" value="Updated Product Details">
+</body>
+</html>
