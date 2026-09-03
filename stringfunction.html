@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let firstName="Tejasvi";
+        let lastName="Rana";
+
+        document.write("My firstName is: " + firstName+"<br>");
+       
+        document.write("My lastName is: " + lastName+"<br>");
+        
+        document.write(`My firstName is ${firstName}`);
+        document.write("<br>");
+       
+        document.write(`My Name is ${firstName} ${lastName}`);
+        document.write("<br>");
+        document.write(`"My Name is: "${firstName} ${lastName}`);
+        document.write("<br>");
+
+        function fullName(first,last){
+            return `${first} ${last}`;
+        }
+        let name=`Hello ${fullName(firstName,lastName)}`;
+        document.write(name);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
