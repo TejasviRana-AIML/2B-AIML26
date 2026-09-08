@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account Management System</title>
+     <script>
+        const bankAccount = {
+
+            accountHolderName: "Sapna",
+            accountNumber: 123456789,
+            accountBalance: 5000,
+
+            deposit: function(amount) {
+                this.accountBalance += amount;
+                alert("Amount Deposited Successfully");
+            },
+
+            withdraw: function(amount) {
+                if (amount > this.accountBalance) {
+                    alert("Insufficient Balance");
+                } else {
+                    this.accountBalance -= amount;
+                    alert("Amount Withdrawn Successfully");
+                }
+            },
+
+            displayBalance: function() {
+                document.getElementById("output").innerHTML =
+                    "Account Holder Name: " + this.accountHolderName + "<br>" +
+                    "Account Number: " + this.accountNumber + "<br>" +
+                    "Current Balance: ₹" + this.accountBalance;
+            }
+        };
+
+        window.onload = function() {
+
+            bankAccount.displayBalance();
+
+            let depositAmount = prompt("Enter amount to deposit:");
+
+            if (depositAmount !== null && depositAmount !== "") {
+                bankAccount.deposit(Number(depositAmount));
+            }
+
+            bankAccount.displayBalance();
+
+            let withdrawAmount = prompt("Enter amount to withdraw:");
+
+            if (withdrawAmount !== null && withdrawAmount !== "") {
+                bankAccount.withdraw(Number(withdrawAmount));
+            }
+
+            bankAccount.displayBalance();
+        };
+    </script>
+
+</head>
+
+<body>
+
+    <h1>Bank Account Management System</h1>
+
+    <div id="output"></div>
+
+    
+</body>
+</html>
