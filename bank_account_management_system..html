@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account Management System</title>
+    <script>
+        class BankAccount{
+            static count=0;
+            constructor (accountno,holdername,balance){
+                this.accountno=accountno;
+                this.holdername=holdername;
+                this.balance=balance;
+                BankAccount.count++;
+            }
+            deposit(amount){
+                this.balance+=amount;
+                document.write("Deposited: "+amount+"<br>");
+            }
+            withdraw(amount){
+                if(this.balance>=amount){
+                    this.balance-=amount;
+                    document.write("Withdrawn: "+amount+"<br>");
+                }
+                else{
+                    document.write("Insufficient balance<br>");
+                }
+            }
+            display(){
+                document.write("Account No: "+this.accountno+"<br>");
+                document.write("Holder Name: "+this.holdername+"<br>");
+                document.write("Balance: "+this.balance+"<br><br>");
+                
+
+               
+            }
+        }
+        let account1 = new BankAccount(1001, "Sapna", 1500);
+        let account2 = new BankAccount(1002, "Ravi", 800);
+        account1.deposit(500);
+        account1.withdraw(200);
+      
+        account1.display();
+        account2.deposit(300);
+        account2.withdraw(1000);
+        account2.display();
+        document.write("Total Accounts: "+BankAccount.count);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
