@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Product System</title>
+    <script>
+        class Product{
+            constructor(productId,productName,price){
+                this.productId=productId;
+                this.productName=productName;
+                this.price=price;
+            }
+            getDiscountPrice(discount){
+                return this.price-(this.price*discount/100);
+            }
+            displayDetails() {
+                document.write(`Product ID: ${this.productId}<br>`);
+                document.write(`Product Name: ${this.productName}<br>`);
+                document.write(`Price: ₹${this.price}<br>`);
+            }
+
+            static compareProducts(product1,product2){
+                if(product1.price>product2.price){
+                    return `${product1.productName} is more expensive than ${product2.productName}`;
+                }else if(product1.price<product2.price){
+                    return `${product2.productName} is more expensive than ${product1.productName}`;
+                }else{
+                    return `${product1.productName} and ${product2.productName} have the same price`;
+                }
+            }
+
+        }
+        class electronics extends Product{
+            constructor(productId,productName,price,warranty){
+                super(productId,productName,price);
+                this.warranty=warranty;
+            }
+             displayDetails() {
+                super.displayDetails();
+                document.write(`Warranty: ${this.warranty} years<br><br>`);
+            }
+        }
+        let product1=new electronics(101,"Smartphone",50000,2);
+        let product2=new electronics(102,"Laptop",100000,3);
+        product1.displayDetails();
+        product2.displayDetails();
+        document.write(
+            `Discounted Price of ${product1.productName}: ₹${product1.getDiscountPrice(10)}<br>`
+        );
+        document.write(
+            `Discounted Price of ${product2.productName}: ₹${product2.getDiscountPrice(15)}<br><br>`
+        );
+        document.write(Product.compareProducts(product1, product2));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
