@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Cab Booking System</title>
+    <script>
+        class Vehicle{
+            
+            constructor(vehicleNo, driverName, distance) {
+                this.vehicleNo = vehicleNo;
+                this.driverName = driverName;
+                this.distance = distance;
+                
+            }
+            calculateFare() {
+                return 0;
+            }
+            static displayPlatformName(){
+                document.write("Welcome to Online Cab Booking System<br><br>");
+            }
+        }
+        class Car extends Vehicle{
+            constructor(vehicleNo, driverName, distance) {
+                super(vehicleNo, driverName, distance);
+                
+            }
+            calculateFare() {
+                return this.distance * 15;
+            }
+        }
+        class bike extends Vehicle{
+            constructor(vehicleNo, driverName, distance) {
+                super(vehicleNo, driverName, distance);
+                
+            }
+            calculateFare() {
+                return this.distance * 8;
+            }
+        }
+    
+        let car1 = new Car("UP-12-AB-1234", "Shiva", 10);
+        let bike1 = new bike("UP-12-CD-5678", "Jay", 5);
+        Vehicle.displayPlatformName();
+        document.write("Car Vehicle No: " + car1.vehicleNo + "<br>");
+        document.write("Car Driver Name: " + car1.driverName + "<br>");
+        document.write("Car Distance: " + car1.distance + " km<br>");
+        document.write("Car Fare: " + car1.calculateFare() + "<br><br>");
+
+        document.write("Bike Vehicle No: "+ bike1.vehicleNo + "<br>");
+        document.write("Bike Driver Name: " + bike1.driverName + "<br>");
+        document.write("Bike Distance: " + bike1.distance + " km<br>");
+        document.write("Bike Fare: " + bike1.calculateFare() + "<br><br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
